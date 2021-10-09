@@ -41,6 +41,7 @@ namespace BarcodeClient
             this.txt_id = new System.Windows.Forms.TextBox();
             this.txt_code = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_serial_port = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_cancel
@@ -48,7 +49,7 @@ namespace BarcodeClient
             this.btn_cancel.Location = new System.Drawing.Point(324, 351);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(94, 29);
-            this.btn_cancel.TabIndex = 11;
+            this.btn_cancel.TabIndex = 7;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
@@ -58,8 +59,8 @@ namespace BarcodeClient
             this.btn_add.Location = new System.Drawing.Point(65, 351);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(94, 29);
-            this.btn_add.TabIndex = 10;
-            this.btn_add.Text = "Add";
+            this.btn_add.TabIndex = 6;
+            this.btn_add.Text = "Save";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -71,14 +72,16 @@ namespace BarcodeClient
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "UserId";
+            this.label2.Visible = false;
             // 
             // txt_user_id
             // 
             this.txt_user_id.Location = new System.Drawing.Point(185, 276);
             this.txt_user_id.Name = "txt_user_id";
             this.txt_user_id.Size = new System.Drawing.Size(233, 27);
-            this.txt_user_id.TabIndex = 8;
+            this.txt_user_id.TabIndex = 5;
             this.txt_user_id.Text = "5";
+            this.txt_user_id.Visible = false;
             this.txt_user_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_code_KeyPress);
             // 
             // label1
@@ -95,7 +98,8 @@ namespace BarcodeClient
             this.txt_details.Location = new System.Drawing.Point(185, 184);
             this.txt_details.Name = "txt_details";
             this.txt_details.Size = new System.Drawing.Size(233, 27);
-            this.txt_details.TabIndex = 6;
+            this.txt_details.TabIndex = 3;
+            this.txt_details.Text = "tmp details";
             // 
             // label3
             // 
@@ -111,7 +115,8 @@ namespace BarcodeClient
             this.txt_name.Location = new System.Drawing.Point(185, 132);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(233, 27);
-            this.txt_name.TabIndex = 14;
+            this.txt_name.TabIndex = 2;
+            this.txt_name.Text = "tmp name";
             // 
             // label4
             // 
@@ -127,14 +132,15 @@ namespace BarcodeClient
             this.txt_id.Location = new System.Drawing.Point(185, 88);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(233, 27);
-            this.txt_id.TabIndex = 12;
+            this.txt_id.TabIndex = 1;
             // 
             // txt_code
             // 
             this.txt_code.Location = new System.Drawing.Point(185, 232);
             this.txt_code.Name = "txt_code";
             this.txt_code.Size = new System.Drawing.Size(233, 27);
-            this.txt_code.TabIndex = 8;
+            this.txt_code.TabIndex = 4;
+            this.txt_code.Text = "446677";
             this.txt_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_code_KeyPress);
             // 
             // label5
@@ -146,11 +152,22 @@ namespace BarcodeClient
             this.label5.TabIndex = 9;
             this.label5.Text = "Code";
             // 
+            // btn_serial_port
+            // 
+            this.btn_serial_port.Location = new System.Drawing.Point(65, 12);
+            this.btn_serial_port.Name = "btn_serial_port";
+            this.btn_serial_port.Size = new System.Drawing.Size(353, 29);
+            this.btn_serial_port.TabIndex = 8;
+            this.btn_serial_port.Text = "Read From Serial";
+            this.btn_serial_port.UseVisualStyleBackColor = true;
+            this.btn_serial_port.Click += new System.EventHandler(this.btn_serial_port_Click);
+            // 
             // AddBarcode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 425);
+            this.Controls.Add(this.btn_serial_port);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.label4);
@@ -165,6 +182,7 @@ namespace BarcodeClient
             this.Controls.Add(this.txt_details);
             this.Name = "AddBarcode";
             this.Text = "AddBarcode";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddBarcode_FormClosed);
             this.Load += new System.EventHandler(this.AddBarcode_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,5 +203,6 @@ namespace BarcodeClient
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.TextBox txt_code;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_serial_port;
     }
 }
